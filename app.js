@@ -13,12 +13,13 @@ var announcementRouter = require('./routes/API/announcement.routes');
 var app = express();
 
 
-// COonexion a la DB
+// Conexion a la DB
 
 conexionDB(); 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'html');
+app.engine('html', require('ejs').__express);
 
 app.use(logger('dev'));
 app.use(express.json());

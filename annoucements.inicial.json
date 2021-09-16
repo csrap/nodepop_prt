@@ -1,0 +1,18 @@
+{
+  "annoucement": [
+    {
+      "name": "Bicicleta",
+      "sale": true,
+      "price": 230.15,
+      "photo": "bici.jpg",
+      "tags": ["lifestyle", "motor"]
+    },
+    {
+      "name": "iPhone 3GS",
+      "sale": false,
+      "price": 50.0,
+      "photo": "iphone.png",
+      "tags": ["lifestyle", "mobile"]
+    }
+  ]
+}

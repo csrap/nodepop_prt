@@ -11,6 +11,10 @@ exports.obtener =  async  (req, res) => {
   const price = req.query.price;
   const photo = req.query.photo;
   const tags = req.query.tags;
+  const limit = parseInt(req.query.limit); 
+  // http://127.0.0.1:3200/api/announcements/?select=name -_id&price=699 (para una el filtro con varios conceptos)
+  const select = req.query.select; 
+  const sort = req.query.sort; 
 
   const filtro = {}; 
 
@@ -31,11 +35,11 @@ exports.obtener =  async  (req, res) => {
   }
 
   if(tags) {
-    filtro.tags = tags ; 
+    filtro.tags= tags; 
   }
   
-  const announcements =  await Announcement.find( filtro); 
-  res.json(announcements); 
+  const announcements =  await Announcement.list (filtro, limit, select, sort); 
+  res.json({ results: announcements}); 
 } catch (error) {
   res.json(error); 
 }
@@ -45,7 +49,6 @@ exports.agregar = async (req, res) => {
 try {
   const { name, sale, price, photo,tags} = req.body; 
   
-
   if(name && sale && price && photo && tags) {
     const nuevoAnnouncement = new Announcement( { name, sale, price, photo, tags}); 
     await nuevoAnnouncement.save(); 

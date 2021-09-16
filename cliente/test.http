@@ -1,4 +1,4 @@
-GET http://127.0.0.1:3000/api/announcements
+GET http://127.0.0.1:3200/api/announcements
 
 
 ###

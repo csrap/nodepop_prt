@@ -1,5 +1,7 @@
 const { Schema, model} = require("mongoose");
 
+const mongoose = require("mongoose"); 
+
 const AnnouncementSchema =  new Schema ( {
   name: {
     type: String,
@@ -17,4 +19,15 @@ const AnnouncementSchema =  new Schema ( {
   
 }); 
 
+AnnouncementSchema.statics.list = function(filtro, limit, select, sort) {
+  const query = Announcement.find(filtro); 
+  query.limit(limit); 
+  query.select(select); 
+  query.sort(sort); 
+  return query.exec(); 
+}
+
+const Announcement = mongoose.model('Announcement', AnnouncementSchema); 
 module.exports = model ( "Announcement", AnnouncementSchema); 
+
+module.exports = Announcement; 
