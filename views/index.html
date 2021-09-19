@@ -6,11 +6,40 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <nav>
+    <a href="/" class="logo">NODEPOP</a>
+  </nav>
 </head>
 
 <body>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to <%= title %>
-  </p>
+  <div class="box">
+    <%announcements.forEach(announcement=> { %>
+      <div class="imgbx">
+        <img src="<%= announcement.photo %>" alt="" style="max-width: 200px; max-height: 200px;">
+      </div>
+      <div class:"content">
+        <h2 class:"announcement-name">
+          <%= announcement.name %>
+        </h2>
+        <h3>
+          <%= announcement.price %> <span>€</span>
+        </h3>
+        <h4>
+          <%= announcement.tags %>
+        </h4>
+        <h5 class="product-title">
+          <% if (announcement.sale===true) { %>
+            Buy
+            <% } else { %>
+              Sale
+              <% } %>
+        </h5>
+
+      </div>
+      <div>
+      </div>
+      <% }); %>
+  </div>
+
+
+</body>

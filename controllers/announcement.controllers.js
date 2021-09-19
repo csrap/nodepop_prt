@@ -1,33 +1,34 @@
-// 'use strict'
+'use strict'
 
 const Announcement = require("../Models/Announcement"); 
 
-
 exports.obtener =  async  (req, res) => {
   try {
-
   const name = req.query.name;  
   const sale = req.query.sale; 
   const price = req.query.price;
   const photo = req.query.photo;
   const tags = req.query.tags;
-  const limit = parseInt(req.query.limit); 
-  // http://127.0.0.1:3200/api/announcements/?select=name -_id&price=699 (para una el filtro con varios conceptos)
+  let limit = parseInt(req.query.limit); 
   const select = req.query.select; 
   const sort = req.query.sort; 
+  let skip = parseInt(req.query.skip);
+  // http://127.0.0.1:3200/api/announcements/?select=name -_id&price=699 (para una el filtro con varios conceptos)
+  
+  
 
   const filtro = {}; 
 
   if(name) {
-    filtro.name= name; 
+    filtro.name = new RegExp('^' + name, "i");
   }
 
   if(sale) {
     filtro.sale= sale; 
   }
 
-  if(price) {
-    filtro.price= price; 
+  if(price) {    
+    filtro.price = price; 
   }
 
   if(photo) {
@@ -38,7 +39,7 @@ exports.obtener =  async  (req, res) => {
     filtro.tags= tags; 
   }
   
-  const announcements =  await Announcement.list (filtro, limit, select, sort); 
+  const announcements =  await Announcement.list (filtro, limit, select, sort, skip); 
   res.json({ results: announcements}); 
 } catch (error) {
   res.json(error); 
@@ -82,10 +83,22 @@ exports.actualizar = async (req, res) => {
 exports.eliminar = async (req, res) => {
     try {
       const _id = req.params.id; 
-    console.log(_id); 
+
     await Announcement.deleteOne({ _id : _id} );
     res.status(200).json({ msj: "Dato borrado de forma satifactoria", isOk: true}); 
     } catch (error) {
       res.status(500).json(error); 
     }
     }
+
+exports.priceFilter = async (req, res) => {
+  try {
+    const range = [req.params.price1, req.params.price2];
+
+    const announcements = await Announcement.find({ price: { $gt: range[0], $lt: range[1] } });
+
+    res.json({ result: announcements});
+  } catch (error) {
+    res.status(500).json(error); 
+  }
+}

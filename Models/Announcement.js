@@ -19,15 +19,16 @@ const AnnouncementSchema =  new Schema ( {
   
 }); 
 
-AnnouncementSchema.statics.list = function(filtro, limit, select, sort) {
+AnnouncementSchema.statics.list = function(filtro, limit, select, sort, skip) {
   const query = Announcement.find(filtro); 
   query.limit(limit); 
   query.select(select); 
   query.sort(sort); 
+  query.skip(skip);
   return query.exec(); 
+
 }
 
 const Announcement = mongoose.model('Announcement', AnnouncementSchema); 
 module.exports = model ( "Announcement", AnnouncementSchema); 
-
 module.exports = Announcement; 

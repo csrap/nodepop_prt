@@ -1,18 +1,25 @@
 {
   "annoucement": [
     {
-      "name": "Bicicleta",
+      "name": "Iphone 12",
       "sale": true,
-      "price": 230.15,
-      "photo": "bici.jpg",
-      "tags": ["lifestyle", "motor"]
+      "price": 599.5,
+      "photo": "./images/iphone.png",
+      "tags": ["Mobile"]
     },
     {
-      "name": "iPhone 3GS",
+      "name": "Car",
       "sale": false,
+      "price": 100000.0,
+      "photo": "./images/car_.png",
+      "tags": ["car"]
+    },
+    {
+      "name": "Electric Brush",
+      "sale": true,
       "price": 50.0,
-      "photo": "iphone.png",
-      "tags": ["lifestyle", "mobile"]
+      "photo": "./images/cepillo_electrico_.png",
+      "tags": ["Lifestyle"]
     }
   ]
 }
