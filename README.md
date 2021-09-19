@@ -36,44 +36,88 @@ http://127.0.0.1:3200/api/announcements/
 
 **_Ejemplo:_**
 
+**Muestra Json**
+
 ```sh
 http://127.0.0.1:3200/api/announcements/?name=<que producto queremos buscar>
+```
+
+**Muestra Browser**
+
+```sh
+http://127.0.0.1:3200/?name=<que producto queremos buscar>
 ```
 
 **Sale** : Con una condición nos indica que si el producto esta en venta o en compra, tipo booleam
 
 **_Ejemplo:_**
 
+**Muestra Json**
+
 ```sh
 http://127.0.0.1:3200/api/announcements/?sale=<true o false>
+```
+
+**Muestra Browser**
+
+```sh
+http://127.0.0.1:3200/?sale=<true o false>
 ```
 
 **price** : Nos entrega la existencia de un valor que se encuentra en la API
 
 **_Ejemplo:_**
 
+**Muestra Json**
+
 ```sh
 http://127.0.0.1:3200/api/announcements/?price=<valor a buscar>
+```
+
+**Muestra Browser**
+
+```sh
+http://127.0.0.1:3200/?price=<valor a buscar>
 ```
 
 **tags** : Nos muestra la eqtiqueta o categoria con la que esta definida el producto
 
 **_Ejemplo:_**
 
+**Muestra Json**
+
 ```sh
 http://127.0.0.1:3200/api/announcements/?tags=<que queremos buscar>
 ```
 
-- **Sort** : Permite ordenar por valor de orden descendiente o decreciente
+**Muestra Browser**
+
+```sh
+http://127.0.0.1:3200/?tags=<que queremos buscar>
+```
+
+**Sort** : Permite ordenar por valor de orden descendiente o decreciente
 
 **_Ejemplo:_**
 
+**Muestra Json**
+
 ```sh
-http://127.0.0.1:3200/api/announcements/?sort=price <forma decreciente>
+http://127.0.0.1:3200/api/announcements/?sort=price <forma creciente>
 ```
 
 ```sh
 http://127.0.0.1:3200/api/announcements/?sort=-price <forma descendiente>
+```
+
+**Muestra Browser**
+
+```sh
+http://127.0.0.1:3200/?sort=price <forma creciente>
+```
+
+```sh
+http://127.0.0.1:3200/?sort=-price <forma descendiente>
 ```
 
 ## Páginación
