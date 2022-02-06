@@ -4,6 +4,16 @@ Desarrollo de un API que se ejecutará en el servidor de un servicio de venta de
 
 Para arrancar el proyecto en modo desarrollo usamos en la terminal el siguiente comando :
 
+## Usage
+
+Copy .env.example to .env and set your credentials
+
+```sh
+cp .env.example.env
+```
+
+### Development Start
+
 ```sh
 npm run dev
 ```
@@ -12,6 +22,12 @@ npm run dev
 
 ```sh
 npm run initDB
+```
+
+## Cluster mode
+
+```sh
+"npm run cluster
 ```
 
 ## Recordatorio de como se arranca MongoDB en Mac y Linux
@@ -87,7 +103,7 @@ http://127.0.0.1:3200/?price=<valor a buscar>
 **Muestra Json**
 
 ```sh
-http://127.0.0.1:3200/api/announcements/?tags=<que queremos buscar>
+http://127.0.0.1:3200/api/
 ```
 
 **Muestra Browser**

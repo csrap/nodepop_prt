@@ -1,45 +1,56 @@
-<!DOCTYPE html>
-<html>
+<%- include('header.html'); -%>
+  <section class="py-5">
+    <%announcements.forEach(announcement=> {
+      %>
 
-<head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <nav>
-    <a href="/" class="logo">NODEPOP</a>
-  </nav>
-</head>
-
-<body>
-  <div class="box">
-    <%announcements.forEach(announcement=> { %>
-      <div class="imgbx">
-        <img src="<%= announcement.photo %>" alt="" style="max-width: 200px; max-height: 200px;">
-      </div>
-      <div class:"content">
-        <h2 class:"announcement-name">
-          <%= announcement.name %>
-        </h2>
-        <h3>
-          <%= announcement.price %> <span>€</span>
-        </h3>
-        <h4>
-          <%= announcement.tags %>
-        </h4>
-        <h5 class="product-title">
-          <% if (announcement.sale===true) { %>
-            Buy
-            <% } else { %>
-              Sale
-              <% } %>
-        </h5>
-
-      </div>
-      <div>
+      <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Product sale o buy-->
+              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                <% if (announcement.sale===true) { %>
+                  <%= __('Buy') %>
+                    <% } else { %>
+                      <%= __('Sale') %>
+                        <% } %>
+              </div>
+              <!-- Product image-->
+              <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+              <!-- Product details-->
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <!-- Product name-->
+                  <h4 class="fw-bolder">
+                    <%= announcement.name %>
+                  </h4>
+                  <!-- Product reviews-->
+                  <div class="d-flex justify-content-center small text-warning mb-2">
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                  </div>
+                  <!-- Product price-->
+                  <h5class="text-muted ">
+                      <%= announcement.price %>
+                  </h5> <span>€</span>
+                    <h6 class=" text-muted">
+                    <%= announcement.tags %>
+                      </h6>
+                </div>
+              </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <% }); %>
-  </div>
+  </section>
 
-
-</body>
+  </body>
+  <%- include('footer.html'); -%>
