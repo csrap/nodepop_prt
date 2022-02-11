@@ -7,14 +7,18 @@
 > **1.** Desplegar en un servidor su desarrollo para la práctica del curso de
 > Programación Backend con Node, la cuál se encuentra en la siguiente Public IPv4 DNS o dominio:
 
-```sh
---------------  ec2-54-166-179-243.compute-1.amazonaws.com -------------------
+```
+
+                 ec2-54-166-179-243.compute-1.amazonaws.com
+
 ```
 
 > **2.** Cargar la práctica realizada en el módulo de React, en la Public IPv4 address :
 
-```sh
----------------------   http://54.166.179.243  ------------------------------
+```
+
+                          http://54.166.179.243
+
 ```
 
 # Nodepop
