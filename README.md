@@ -1,3 +1,22 @@
+# Práctica_Despliege_de_Servidores
+
+> La plataforma de hosting donde se desplego los desarrollos fue en:
+
+![Esta es una imagen](https://tmbroadcast.es/wp-content/uploads/2019/11/Amazon-Web-Services-logo-azul.jpg)
+
+> **1.** Desplegar en un servidor su desarrollo para la práctica del curso de
+> Programación Backend con Node, la cuál se encuentra en la siguiente Public IPv4 DNS o dominio:
+
+```sh
+--------------  ec2-54-166-179-243.compute-1.amazonaws.com -------------------
+```
+
+> **2.** Cargar la práctica realizada en el módulo de React, en la Public IPv4 address :
+
+```sh
+---------------------   http://54.166.179.243  ------------------------------
+```
+
 # Nodepop
 
 Desarrollo de un API que se ejecutará en el servidor de un servicio de venta de articulos de segunda mano.Para ser utilizada por desarrolladores de iOS o Android
