@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const ctrAnn = require("E:/Bootcamp_Keepcoding/m10-Desarrollo-node-avanzado/nodepop_prt/NodeApi/controllers/announcement.controllers");
+const ctrAnn = require("../../controllers/announcement.controllers");
 
 const routerAnnouncement = Router();
 
